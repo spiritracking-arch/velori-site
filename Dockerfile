@@ -2,7 +2,7 @@
 RUN npm install -g pnpm
 WORKDIR /app
 COPY package.json pnpm-lock.yaml* ./
-RUN pnpm install --config.confirmModulesPurge=false && pnpm approve-builds sharp
+RUN pnpm install --ignore-scripts
 
 FROM node:22-alpine AS builder
 RUN npm install -g pnpm
